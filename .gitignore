@@ -1,0 +1,11 @@
+/.gradle/
+/bin/
+/test-output/
+/build/
+/target/
+/.idea/
+/out/
+/.scannerwork/
+/.sonar/
+mqjms.log.0
+vcs.xml
