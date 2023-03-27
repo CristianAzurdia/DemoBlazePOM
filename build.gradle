@@ -19,6 +19,7 @@ dependencies {
     testImplementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.2.3'
 
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.7'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
 
 
 }
