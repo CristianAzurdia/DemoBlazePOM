@@ -12,7 +12,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-@DefaultUrl("https://www.demoblaze.com/")
+@DefaultUrl("https://www.saucedemo.com/")
 public class PrincipalPage extends PageObject {
 
     public static final String TEXTO_ESPERADO_PHONES = "Samsung galaxy s6";
@@ -93,7 +93,7 @@ public class PrincipalPage extends PageObject {
 
     public void clickCategoria(String categoria) {
         WebElement elementoCategoria = getDriver().findElement(By.xpath("//a[contains(text(),'" + categoria + "')]"));
-        waitFor(elementoCategoria).waitUntilClickable();
+        waitFor(elementoCategoria).waitUntilClickable();//el wait for es para darle esperas implicitas
         elementoCategoria.click();
     }
 

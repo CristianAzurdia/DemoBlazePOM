@@ -5,15 +5,30 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import net.serenitybdd.core.annotations.findby.By;
+import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertEquals;
 
 
 public class GeneralDefinitions {
-
-    @Steps
+    @ManagedPages
     GeneralSteps generalSteps;
 
-    @Given("que un usuario visita la pagina principal")
+    @Given("que estoy en la pagina de inicio de saucedemo.com")
+    public void queEstoyEnLaPaginaDeInicioDeSauceDemo() {
+        // Abre la página de inicio de saucedemo.com en tu navegador
+        generalSteps.abrirPagina();
+    }
+
+
+
+    /*@Given("que un usuario visita la pagina principal")
     public void queUnUsuarioVisitaLaPaginaPrincipal() {
         generalSteps.abrirPagina();
     }
@@ -46,6 +61,6 @@ public class GeneralDefinitions {
     @Then("el usuario ve los productos de la categoria {string}")
     public void elUsuarioVeLosProductosDeLaCategoria(String value) {
         generalSteps.verificarProductosDeLaCategoria(value);
-    }
+    }*/
 
 }
