@@ -28,6 +28,24 @@ public class PrincipalPage extends PageObject {
     @FindBy(xpath = "//a[contains(text(),'Home')]")
     private WebElement btnHome;
 
+    @FindBy(xpath = "//input[@id='user-name']")
+    private WebElement inpHome;
+    @FindBy(xpath = "//input[@id='password']")
+    private WebElement inpPass;
+    @FindBy(xpath = "//span[@class='title']")
+    public WebElement spProducts;
+    @FindBy(xpath = "//input[@id='login-button']")
+    private  WebElement btnLogin;
+
+    public void verificarCredenciales(String usuario, String pass){
+        inpHome.sendKeys(usuario);
+        inpPass.sendKeys(pass);
+    }
+
+    public void clickLogin(){
+        btnLogin.click();
+    }
+
     public void clickContact() {
         waitFor(btnContact).isClickable();
         btnContact.click();

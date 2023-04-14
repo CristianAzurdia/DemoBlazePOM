@@ -4,18 +4,34 @@ import com.demoblaze.main.exceptions.ExcepcionNavegacion;
 import com.demoblaze.main.pages.PrincipalPage;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Step;
+import org.fluentlenium.core.annotation.Page;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 public class GeneralSteps {
 
-    @ManagedPages
+    @Page
     PrincipalPage principalPage;
 
     @Step
     public void abrirPagina() {
         principalPage.open();
+    }
+
+    @Step
+    public void ingresarCredenciales(String usuario, String pass){
+        principalPage.verificarCredenciales(usuario, pass);
+    }
+
+    @Step
+    public void verificarPagina(String etiqueta){
+        assertThat("Products", equalTo(principalPage.spProducts.getText()));
+    }
+
+    @Step
+    public void clickLogin(){
+        principalPage.clickLogin();
     }
 
     @Step

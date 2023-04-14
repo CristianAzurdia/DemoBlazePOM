@@ -17,13 +17,31 @@ import static org.junit.Assert.assertEquals;
 
 
 public class GeneralDefinitions {
-    @ManagedPages
+    @Steps
     GeneralSteps generalSteps;
 
     @Given("que estoy en la pagina de inicio de saucedemo.com")
     public void queEstoyEnLaPaginaDeInicioDeSauceDemo() {
         // Abre la página de inicio de saucedemo.com en tu navegador
         generalSteps.abrirPagina();
+    }
+
+    @When("ingrese mi usuario {string} y mi contrasenia {string}")
+    public void ingreseMiUsuarioYMiContrasenia(String usuario, String pass) {
+        // Write code here that turns the phrase above into concrete actions
+        generalSteps.ingresarCredenciales(usuario, pass);
+    }
+
+    @When("click al boton de login")
+    public void clickAlBotonDeLogin() {
+        // Write code here that turns the phrase above into concrete actions
+        generalSteps.clickLogin();
+    }
+
+    @Then("veo la etiqueta {string}")
+    public void veoLaEtiqueta(String etiqueta) {
+        // Write code here that turns the phrase above into concrete actions
+        generalSteps.verificarPagina(etiqueta);
     }
 
 
